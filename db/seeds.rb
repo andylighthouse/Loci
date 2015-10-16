@@ -12,5 +12,6 @@ User.populate 100 do |user|
     user.first_name = Faker::Name.first_name
     user.last_name = Faker::Name.last_name
     user.email = Faker::Internet.email
-    user.postal_code = Faker::Address.postcode
+    user.lat = Faker::Address.latitude
+    user.lng = Faker::Address.longitude
 end
