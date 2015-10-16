@@ -1,0 +1,5 @@
+ca:
+  faker:
+    address:
+      postcode: /[V][0-9][A-CEJ-NPR-TV-Z] ?[0-9][A-CEJ-NPR-TV-Z][0-9]/
+     
