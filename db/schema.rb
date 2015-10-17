@@ -10,8 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-<<<<<<< HEAD
-=======
 
 ActiveRecord::Schema.define(version: 20151016230518) do
 
@@ -63,4 +61,3 @@ ActiveRecord::Schema.define(version: 20151016230518) do
   end
 
 end
->>>>>>> 27Ethan_skilltable
