@@ -61,7 +61,20 @@ nav {
     display: none;
     padding-top: 1em;
 
-    
+
+    &.clicked {
+      display: block;
+    }
+  }
+
+  #signup-form {
+    position: absolute;
+    z-index: 3;
+    width: 300px;
+    height: 300px;
+    left: 40%;
+    top: 120px;
+    display: none;
 
     &.clicked {
       display: block;
