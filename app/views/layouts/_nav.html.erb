@@ -1,24 +1,45 @@
 <nav>
   <div>
-      <h1><a href="#">Loci</a></h1>
+      <h1><a href="#">LOCI</a></h1>
   </div>
 
   <ul>
     <li><a href="#">About</a></li>
     <li><a href="#" id="login-button">Login</a></li>
-    <li><a href="#">Sign Up</a></li>
+    <li><a href="#" id="signup-button">Sign Up</a></li>
   </ul>
 
   <div id="login-form">
     <%= form_for :user do |f| %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <% f.label :email %>
+      <%= f.text_field :email, :placeholder => "Email" %>
+
+      <% f.label :password %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+
+      <div><%= f.submit "Submit", :class => "button tiny" %></div>
     <%end%>
   </div>
 
-  <div id="signup">
+  <div id="signup-form">
+    <%= form_for :user do |f| %>
+      <% f.label :first_name %>
+      <%= f.text_field :first_name, :placeholder => "First Name" %>
+
+      <% f.label :last_name %>
+      <%= f.text_field :last_name, :placeholder => "Last Name" %>
+
+      <% f.label :address %>
+      <%= f.text_field :address, :placeholder => "Address" %>
+
+      <% f.label :email %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+
+      <% f.label :password %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+
+      <% f.label :password_confimation %>
+      <%= f.password_field :password_confimation, :placeholder => "Password Confirmation"%>
+    <%end%>
   </div>
 </nav>

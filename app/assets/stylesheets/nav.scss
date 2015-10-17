@@ -1,17 +1,13 @@
 #filter {
   background-color: lightgreen;
   width: 100%;
-  height: 1160px;
-  opacity: 0.7;
-  z-index: 2;
+  height: 803px;
+  opacity: 0.5;
+  z-index: 1;
   top: 3.5em;
   position: absolute;
 }
 
-#map {
-  z-index: 1;
-  top: 3.5em;
-}
 
 nav {
 
@@ -19,7 +15,7 @@ nav {
     width: 100%;
     background-color: #4d9e13;
     position: fixed;
-    z-index: 5;
+    z-index: 2;
   
 
   a {
@@ -55,18 +51,40 @@ nav {
     }
   }
 
+
   #login-form {
     position: absolute;
-    z-index: 100;
-    top:4em;
+    z-index: 2;
+    top:3em;
     right:2em;
-    /*height: 600px;*/
     width: 300px;
     display: none;
-    
+    padding-top: 1em;
+
 
     &.clicked {
       display: block;
     }
   }
+
+  #signup-form {
+    position: absolute;
+    z-index: 3;
+    width: 300px;
+    height: 300px;
+    left: 40%;
+    top: 120px;
+    display: none;
+
+    &.clicked {
+      display: block;
+    }
+  }
+
+  .button.tiny {
+    background-color: #4D9E13;
+  }
 }
+
+
+
