@@ -54,10 +54,12 @@ ActiveRecord::Schema.define(version: 20151016230518) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.float    "lat"
-    t.float    "lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "address"
+    t.string   "password_digest"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
