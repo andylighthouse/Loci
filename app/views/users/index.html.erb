@@ -22,8 +22,21 @@ function initMap() {
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDW2au_OMa4FizkXdoCk0peB8FFpXQUnE&callback=initMap">
     </script>
+
+    <div id='filter'> 
+      <div id="search-baaaaar">
+        <%= form_for :user do |f| %>
+        <%f.label :skills %>
+        <%= f.text_field :skill_name, :placeholder => 'Search' %>
+        <div class="button tiny"> Go</div>
+        <%end%>
+      </div>
+    </div>
+
+  
+
   </body>
 </html>
 
-<div id='filter'></div>
+
 
