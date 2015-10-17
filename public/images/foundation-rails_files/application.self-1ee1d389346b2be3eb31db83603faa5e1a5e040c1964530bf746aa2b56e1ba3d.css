@@ -10,20 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
- //= require foundation_and_overrides
+
+
+
 
 
  */
-#search-baaaaar {
+/* line 20, /Users/Andy/Lighthouse/bootcamp/w7d3/project/app/assets/stylesheets/application.scss */
+#search-bar {
   position: absolute;
   border-radius: 2px;
   border-color: black;
   border-width: 3px;
-  z-index: 10;
-  top: 60%;
-  left: 40%;
+  z-index: 2;
 }
-
-
