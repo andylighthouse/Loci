@@ -5,11 +5,11 @@ $(function(){
   //   $('#login-form').removeClass("clicked")
   // });
 
-  $('#login-button').on('click', function() {
+  $('#login-button').on('mouseenter', function() {
     $('#login-form').addClass("clicked");
   });
 
-  $('#filter').on('click', function() {
+  $('#login-form').on('mouseleave', function() {
     $(this).removeClass("clicked");
   })
 });

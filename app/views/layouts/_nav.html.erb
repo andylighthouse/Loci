@@ -1,6 +1,6 @@
 <nav>
   <div>
-      <h1><a href="#">Loci</a></h1>
+      <h1><a href="#">LOCI</a></h1>
   </div>
 
   <ul>
@@ -11,14 +11,18 @@
 
   <div id="login-form">
     <%= form_for :user do |f| %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <% f.label :email %>
+      <%= f.text_field :email, :placeholder => "Email" %>
+
+      <% f.label :password %>
+      <%= f.password_field :password, :placeholder => "Password" %>
+
+      <div><%= f.submit "Submit", :class => "button tiny" %></div>
     <%end%>
   </div>
 
   <div id="signup">
+    <% form_for :user do %>
+    <%end%>
   </div>
 </nav>
