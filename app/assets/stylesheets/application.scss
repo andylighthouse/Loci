@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- //= require foundation_and_overrides
+ *= require foundation_and_overrides
 
 
  */
@@ -24,6 +24,17 @@
   z-index: 3;
   top: 60%;
   left: 40%;
+  width: 300px;
+}
+
+#filter {
+  background-color: lightgreen;
+  width: 100%;
+  height: 750px;
+  opacity: 0.5;
+  z-index: 1;
+  top: 3.5em;
+  position: absolute;
 }
 
 

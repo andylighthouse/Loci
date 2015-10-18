@@ -6,6 +6,10 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'elasticsearch-model' 
+
+gem 'elasticsearch-rails'
+
 gem 'foundation-rails'
 
 gem 'pg'

@@ -1,12 +1,13 @@
-$(function() {
-  $('#signup-button').on('click', function() {
-    console.log('ethan')
-    $('#signup-form').toggleClass('clicked');
+$(function () {
+  $('#secondModal').on('submit', function() {
+    var signup = $('#secondModal')
+    $.ajax({
+      url: signup.attr('action'),
+      method: signup.attr('method'),
+      dataType: 'json',
+      data: signup.serialize(),
+      
+    });
+  return false;
   });
-
-  $('#filter').on('click', function() {
-    $('#signup-form').removeClass('clicked')
-  });
-
-
 });
