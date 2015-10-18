@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'elasticsearch-model' 
+
+gem 'elasticsearch-rails'
+
+
 gem 'foundation-rails'
 
 gem 'pg'
