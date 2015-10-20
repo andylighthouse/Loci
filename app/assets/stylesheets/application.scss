@@ -16,6 +16,11 @@
 
 
  */
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
 #search-baaaaar {
   position: absolute;
   border-radius: 2px;
@@ -50,4 +55,8 @@
   width: 100%;
 }
 
-
+#gmap {
+  position:fixed;
+  height: 100%;
+  width: 100%;
+}
