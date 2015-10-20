@@ -25,9 +25,9 @@ function initMap() {
 
     <div id='filter'> 
       <div id="search-baaaaar">
-        <%= form_for :user do |f| %>
-        <%f.label :skills %>
-        <%= f.text_field :skill_name, :placeholder => 'Search' %>
+        <%= form_tag ('/') do %>
+        <% label_tag :skills %>
+        <%= text_field_tag :skill_name, :placeholder => 'Search' %>
         <div class="button tiny"> Go</div>
         <%end%>
       </div>

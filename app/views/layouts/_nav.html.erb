@@ -24,9 +24,9 @@
 
   <div id="secondModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
     <h1>Please Sign Up</h1>
-    <%= form_for :user do |f| %>
+    <%= form_for @user, :html => {:id => "signupForm"} do |f| %>
       <% f.label :first_name %>
-      <%= f.text_field :first_name, :placeholder => "First Name" %>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
 
       <% f.label :last_name %>
       <%= f.text_field :last_name, :placeholder => "Last Name" %>
@@ -43,7 +43,7 @@
       <% f.label :password_confimation %>
       <%= f.password_field :password_confimation, :placeholder => "Password Confirmation"%>
       <div><%= f.submit "Submit", :class => "button tiny" %></div>
-    <%end%>  
+    <%end%>
   </div>
 
   
