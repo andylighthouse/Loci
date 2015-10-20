@@ -40,7 +40,14 @@
 #geolocation {
   position: absolute;
   top: 3.5em;
+  height: 100%;
+  width: 100%;
 }
 
+#gmap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 
 
