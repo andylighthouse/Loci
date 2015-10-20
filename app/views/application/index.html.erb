@@ -6,7 +6,7 @@
       <div id="search-baaaaar">
         <%= form_tag ('/') do %>
         <% label_tag :skills %>
-        <%= text_field_tag :skill_name, :placeholder => 'Search' %>
+        <%= text_field_tag :skill_name, nil, :placeholder => 'Search' %>
         <%= submit_tag "Go",id:"submit", class: "button tiny" %>
         <%end%>
       </div>
