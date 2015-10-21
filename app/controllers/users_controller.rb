@@ -3,8 +3,12 @@ class UsersController < ApplicationController
   
 
   def index
-    params[:search]
     # @users = User.all
+    User.import force: true
+    @users = User.search('javascript').results.first
+    respond_to do |format|
+      format.json{render :json => @users} 
+    end
   end
 
   def show
