@@ -3,17 +3,17 @@
   
   <div id='gmap'>
     <div id='map' class="filter"> 
-      <div id="search-baaaaar">
-        <%= form_tag ('/') do %>
-        <% label_tag :skills %>
-        <%= text_field_tag :skill_name, nil, :placeholder => 'Search' %>
-        <%= submit_tag "Go",id:"submit", class: "button tiny" %>
-        <%end%>
-      </div>
     </div>
-
     <div id="geolocation" style='width: 100%; height: 100%;'></div>
-    </div>
+  </div>
+
+  <div id="search-baaaaar">
+    <%= form_tag ('/') do %>
+    <% label_tag :skills %>
+    <%= text_field_tag :skill_name, nil, :placeholder => 'Search' %>
+    <%= submit_tag "Go",id:"submit", class: "button tiny" %>
+    <%end%>
+  </div>
 
   <script type="text/javascript">
 
@@ -77,21 +77,21 @@
       $.ajax({
         url: '/users',
         data: {
-          search: $('[name=skill_name]').val()
+          search: $('[name=skill_name]').val(),
         },
         type: 'GET',
         dataType: 'json',
         success: function(data) {
           console.log(data);
-          var map = $('#geolocation');
+          var map = $('geolocation');
           $('#map').removeClass('filter');
-          map.clear();
-          map.addMarkers(data);
-          map.setCenter(currentLocation);
+          // map.clear();
+          // map.addMarkers(data);
+          // map.setCenter(currentLocation);
         }
       });
       return false;
-     })
+     });
 
   </script>
 
