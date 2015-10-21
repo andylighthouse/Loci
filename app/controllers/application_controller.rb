@@ -8,9 +8,17 @@ class ApplicationController < ActionController::Base
     @user = User.new
   end
 
+  private
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  helper_method :current_user
+
 end
 
-  def index 
+  def index
     @users = User.all
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
