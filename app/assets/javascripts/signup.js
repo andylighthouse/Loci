@@ -1,23 +1,31 @@
 $(function () {
-  console.log('javascriptasdfsdf')
+  console.log('javascriptasdfsdf');
   $('#signupForm').on('submit', function() {
-    console.log('helloooooo')
-    var signupForm = $('#signupForm')
+    var signupForm = $('#signupForm');
     $.ajax({
       url: '/users',
       method: 'post',
       dataType: 'json',
       data: signupForm.serialize(),
       success:function(data){
-        console.log(data)
-        console.log('success')
+        console.log(data);
+        $('#secondModal').foundation('reveal', 'close');
+        userGreeting(data.first_name);
+
       },
       error:function() {
-        console.log(e)
-        console.log('error')
+        console.log(e);
+        console.log('error');
       }
 
     });
   return false;
   });
+
+  function userGreeting(userName){
+    $('#user-login-button').text("Welcome "+ userName);
+    $('#user-login-button').addClass('welcome-message');
+    $('#logout-button').show()
+    $('#user-signup-button').hide()
+  };
 });
