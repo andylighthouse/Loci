@@ -1,13 +1,19 @@
 class SessionsController < ApplicationController
 
 
-#-----------OmniAuth Facebook Login---------------#
   def create
-    auth = request.env["omniauth.auth"]
-    session[:omniauth] = auth.except('extra')
-    user = User.sign_in_from_omniauth(auth)
-    session[:user_id] = user.id
-    redirect_to root_url, notice: "Signed In"
+    # auth = request.env["omniauth.auth"]
+    # session[:omniauth] = auth.except('extra')
+    # user = User.sign_in_from_omniauth(auth)
+    # session[:user_id] = user.id
+    # redirect_to root_url, notice: "Signed In"
+   
+    user = User.find_by(email: params[:user][:email])
+
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      render json: user
+    end
   end
 
   def destroy
@@ -17,6 +23,6 @@ class SessionsController < ApplicationController
     # session[:user_id] = nil
     # redirect_to root_url, notice: "Signed Out"
   end
-#-----------OmniAuth Facebook Login---------------#
+
 
 end

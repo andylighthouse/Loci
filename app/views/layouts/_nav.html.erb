@@ -20,7 +20,7 @@
 
   <div id="firstModal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
     <h1>Please Login</h1>
-    <%= form_for :user do |f| %>
+    <%= form_for @user, :html => {:id => "login-form"} do |f| %>
       <% f.label :email %>
       <%= f.text_field :email, :placeholder => "Email" %>
       <% f.label :password %>
