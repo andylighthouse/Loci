@@ -1,13 +1,21 @@
 <nav>
   <div>
-      <h1><a href="#">LOCI</a></h1>
+    <h1><a href="#">LOCI</a></h1>
   </div>
+    <ul id="nav-bar-list">
+      <li><a href="#">About</a></li>
 
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#" data-reveal-id="firstModal">Login</a></li>
-    <li><a href="#" data-reveal-id="secondModal">Sign Up</a></li>
-  </ul>
+        <% unless current_user %>
+            <li ><a href="#" id="user-login-button" data-reveal-id="firstModal">Login</a></li>
+            <li id="user-signup-button"><a href="#" data-reveal-id="secondModal">Sign Up</a></li>
+            <li id="logout-button" style= "display: none;"><%=link_to 'Logout', session_path, method: 'delete' %></li>
+        <%else%>
+            <li ><a href="#" >Welcome <%=current_user.first_name%></a></li>
+            <li ><%=link_to 'Logout', session_path, method: 'delete' %></li>
+        <%end%>
+    </ul>
+</nav>
+
 
 
 
@@ -45,6 +53,3 @@
       <div><%= f.submit "Submit", :class => "button tiny" %></div>
     <%end%>
   </div>
-
-  
-</nav>

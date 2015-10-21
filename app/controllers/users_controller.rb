@@ -27,7 +27,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       respond_to do |format|
-        format.json{render :json => @user} 
+        format.json{
+          render json: @user.to_json
+        }
       end
     end
   end
