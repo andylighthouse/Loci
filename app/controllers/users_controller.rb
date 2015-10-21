@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     User.import force: true
-    @users = User.search('javascript').results.first
+    @users = User.search(params[:search]).results.first
     respond_to do |format|
       format.json{render :json => @users} 
     end

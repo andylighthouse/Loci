@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
+#omniauth gem for oAuth Facebook-log-in
+gem 'omniauth-facebook'
+
 gem 'geocoder'
 
 gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
-gem 'elasticsearch-model' 
+gem 'elasticsearch-model'
 
 gem 'elasticsearch-rails'
 
@@ -57,7 +60,7 @@ group :development do
   gem 'pry'
   # testing geocoder 
   
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
