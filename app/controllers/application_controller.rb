@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :create_new_user
 
+  private
+
   def create_new_user
     @user = User.new
   end
-
-  private
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

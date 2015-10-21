@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
 #-----------OmniAuth Facebook Login---------------#
   def create
     auth = request.env["omniauth.auth"]
@@ -10,11 +11,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    session[:user_id] = nil
     session[:omniauth] = nil
-    redirect_to root_url
+    redirect_to root_path
     # session[:user_id] = nil
     # redirect_to root_url, notice: "Signed Out"
   end
 #-----------OmniAuth Facebook Login---------------#
+
 end
