@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     User.import force: true
-    @users = User.search('javascript').results.first
+    @users = User.search(params[:search]).results.first
     respond_to do |format|
       format.json{render :json => @users} 
     end
@@ -31,9 +31,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       respond_to do |format|
-        format.json{
-          render json: @user.to_json
-        }
+        format.json{render :json => @user} 
       end
     end
   end
