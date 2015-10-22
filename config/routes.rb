@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :users
   root 'application#index'
-  resource :session, only: [:create, :destroy] 
+  resource :session, only: [:create, :destroy]
 
 #-----------OmniAuth Facebook Login---------------#
-  get 'auth/:provider/callback', to: "sessions#create"
+  get 'auth/:provider/callback', to: "sessions#fbcreate"
 
   delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
 #-----------OmniAuth Facebook Login---------------#
