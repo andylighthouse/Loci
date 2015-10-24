@@ -110,8 +110,8 @@
       Gmaps.store.markers = data.map(function(point){
         // console.log(point);
         return handler.addMarker({
-            lat: point.lat,
-            lng: point.lng,
+            lat: point._source.latitude,
+            lng: point._source.longitude,
             picture: {
               url: "../images/yoda.png",
               width:  64,
