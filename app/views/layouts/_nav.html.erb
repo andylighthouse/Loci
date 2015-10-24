@@ -5,7 +5,7 @@
     <ul id="nav-bar-list">
       <li><a href="#">About</a></li>
 
-        <% unless current_user %>
+        <% if current_user.nil? %>
             <li ><a href="#" id="user-login-button" data-reveal-id="firstModal">Login</a></li>
             <li id="user-signup-button"><a href="#" data-reveal-id="secondModal">Sign Up</a></li>
             <li id="profile-button" style= "display: none"><a href="/profile/show">User Profile</a></li>
