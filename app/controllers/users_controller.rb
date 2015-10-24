@@ -4,10 +4,12 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.all
-    User.import force: true
-    @users = User.search(params[:search]).results.first
+    # User.import force: true
+    # @users = User.search(query: { match: { skill_name: params[:search], latitude: params[:lat], longitude: params[:lng] }}).results
+    @users = User.search(params[:search]).results
+
     respond_to do |format|
-      format.json{render :json => @users} 
+      format.json { render :json => @users }
     end
   end
 

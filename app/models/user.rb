@@ -21,8 +21,17 @@ class User < ActiveRecord::Base
   end
 
   def as_indexed_json(options={})
+
+    # { 
+    #   id: id,
+    #   location: {
+    #     lat: latitude,
+    #     lng: longitude
+    #   },
+    #   skills: skills.map { | s| s.name }
+    # }
     as_json(
-      only: [:id, :first_name, :full_name, :email],
+      only: [:id, :first_name, :full_name, :email, :latitude, :longitude],
       include: [:skills],
       methods: [:full_name]  
     )

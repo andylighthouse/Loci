@@ -8,14 +8,6 @@
 # I18n.load_path += Dir[Rails.root.join('lib', 'locales', '*.yml')]
 # I18n.default_locale = :ca
 
-# User.populate 100 do |user|
-#     user.first_name = Faker::Name.first_name
-#     user.last_name = Faker::Name.last_name
-#     user.email = Faker::Internet.email
-#     user.lat = Faker::Address.lat
-#     user.lng = Faker::Address.lng
-# end
-
 skill_list = [
   "start-ups",
   "marketing",
@@ -128,9 +120,31 @@ skill_list = [
   "Telugu",
   "Vietnamese",
   "Korean",
-  "others",
+  "Foosball",
+  "Basketball",
+  "Soccer",
+  "Baseball",
+  "Rugby",
+  "Badminton",
+  "Football",
 ]
 
-skill_list.each do |name|
+skills = skill_list.map do |name|
   Skill.create(skill_name: name)
 end
+
+
+User.populate 100 do |user|
+    user.first_name = Faker::Name.first_name
+    user.last_name = Faker::Name.last_name
+    user.email = Faker::Internet.email
+    user.latitude = rand(49.201168..49.274245)
+    user.longitude = rand(-123.251152..-122.905083)
+end
+
+User.all.each do |user|
+  user.skills << skills.sample
+end
+
+
+User.import force: true

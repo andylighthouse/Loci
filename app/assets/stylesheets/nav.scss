@@ -2,17 +2,20 @@ nav {
 
     height: 3.5em;
     width: 100%;
-    background-color: #4d9e13;
+    background-color: #30c2a5;
     position: fixed;
     z-index: 2;
-  
+    box-shadow: rgb(20, 144, 120) 1px 5px;
+    font-family:  PTSansBold,Helvetica,Arial,sans-serif;
+    font-weight: bold;
 
   a {
     color: white;
     text-decoration: none;
+    text-shadow: rgb(20, 144, 120) 1px 1px;
 
     &:hover {
-      color: green;
+      color: #008CBA;
     }
 
     &:focus {
@@ -51,7 +54,6 @@ nav {
     display: none;
     padding-top: 1em;
 
-
     &.clicked {
       display: block;
     }
@@ -70,11 +72,11 @@ nav {
       display: block;
     }
   }
-
-  .button.tiny {
-    background-color: #4D9E13;
-  }
 }
+  .logo {
+    font-size: 2em;
+    margin-left: 1em;
+  }
 
 
 

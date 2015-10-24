@@ -1,5 +1,4 @@
 $(function () {
-  console.log('javascriptasdfsdf');
   $('#signupForm').on('submit', function() {
     var signupForm = $('#signupForm');
     $.ajax({
