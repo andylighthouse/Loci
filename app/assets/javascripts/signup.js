@@ -21,6 +21,7 @@ $(function () {
   function userGreeting(userName){
     $('#user-login-button').text("Welcome "+ userName);
     $('#logout-button').show();
+    $('#profile-button').show();
     $('#user-signup-button').hide();
   };
 });

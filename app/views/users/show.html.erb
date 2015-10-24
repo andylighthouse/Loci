@@ -2,7 +2,7 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
   <body>
     <br><br>
-    <div id='filter'> 
+    <div id='filter'>
       <div id="search-baaaaar">
         <%= form_for :user do |f| %>
         <%f.label :skills %>
@@ -22,13 +22,13 @@
     var mapStyle = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}];
 
     handler = Gmaps.build('Google');
-    var init_map = handler.buildMap({ 
+    var init_map = handler.buildMap({
     provider: {
       zoom:      15,
       // center:    new google.maps.LatLng(53.385873, -1.471471),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       styles:    mapStyle
-    }, internal: { 
+    }, internal: {
       id: 'geolocation'
     }
     }, function(){
@@ -53,7 +53,7 @@
         picture: {
         url: "https://cdn4.iconfinder.com/data/icons/proglyphs-free/512/Darth_Vader-128.png",
         width:  128,
-        height: 128 
+        height: 128
       }
       });
       handler.map.centerOn(marker);

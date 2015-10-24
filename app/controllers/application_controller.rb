@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   def create_new_user
     @user = User.new
+    @skills = Skill.all
   end
 
   def current_user
