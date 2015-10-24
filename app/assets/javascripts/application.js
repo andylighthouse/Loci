@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require webrtc.js
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
