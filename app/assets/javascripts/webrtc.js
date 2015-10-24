@@ -7,7 +7,7 @@ $(function() {// Initialise DataChannel.js
 
   // // Open a connection to Pusher
     var pusher = new Pusher("0303fab2c74ca55f8a33"); //hide this later
-    var pusherChannel = pusher.subscribe('1');
+    var pusherChannel = pusher.subscribe(window.room);
 
     pusherChannel.bind("message", function(message) {
       // config.onmessage(message);

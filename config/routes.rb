@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resource :session, only: [:create, :destroy]
 
   post '/send_message', to: 'chats#send_message'
-  get 'chats/:id', to: 'chats#message'
+  get 'chats/:room', to: 'chats#message' # params[:room]
+
   # resources :chats, only: [:show] 
 
 
