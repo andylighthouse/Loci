@@ -92,8 +92,8 @@
       },
       type: 'GET',
       dataType: 'json',
-      success: function(data) {
-      console.log(data);
+      success: function(users) {
+      console.log(users);
       // var currentMarkers = []
       // handler.addMarkers(data);
       $('#map').removeClass('filter');
@@ -107,17 +107,18 @@
       // clear the old markers
       handler.removeMarkers(Gmaps.store.markers);
 
-      Gmaps.store.markers = data.map(function(point){
+      Gmaps.store.markers = users.map(function(user){
+        // console.log(user);
         // console.log(point);
         return handler.addMarker({
-            lat: point.lat,
-            lng: point.lng,
+            lat: user._source.latitude,
+            lng: user._source.longitude,
             picture: {
               url: "../images/yoda.png",
               width:  64,
               height: 64 
             },  
-            "infowindow": "Here, you are."
+            "infowindow": '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'
           });
       });
 
