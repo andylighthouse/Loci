@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
   resources :users
   root 'application#index'
-  resource :session, only: [:create, :destroy] 
+  resource :session, only: [:create, :destroy]
 
-  
+  post '/send_message', to: 'chats#send_message'
+  get 'chats/:id', to: 'chats#message'
+  # resources :chats, only: [:show] 
+
+
+  get 'profile/:id', to: "profiles#show"
+
+
+#-----------OmniAuth Facebook Login---------------#
+  get 'auth/:provider/callback', to: "sessions#fbcreate"
+
+  delete 'sign_out', to: "sessions#destroy", as: 'sign_out'
+#-----------OmniAuth Facebook Login---------------#
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

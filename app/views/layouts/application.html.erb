@@ -9,8 +9,15 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    
+    <%= csrf_meta_tags %>  
+      <!-- Pusher for WebRTC signalling -->
+    <script src="//js.pusher.com/2.2/pusher.js"></script>
+
+      <!-- DataChannel.js for WebRTC functionality -->
+    <script src="//webrtc-experiment.com/DataChannel.js"></script>
+
+      <!-- Our WebRTC application -->
+    <script type="text/javascript" src="webrtc.js"></script>
   </head>
 
   <body>

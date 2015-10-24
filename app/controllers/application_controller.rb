@@ -4,10 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :create_new_user
 
-  protected
-        
+  private
+
   def create_new_user
     @user = User.new
+    @skills = Skill.all
   end
 
   def current_user
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
 
 end
 
-  def index 
+  def index
     @users = User.all
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude

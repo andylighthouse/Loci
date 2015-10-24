@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
 
   def index
     # @users = User.all
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @users = User.search(params[:search]).results
 
     respond_to do |format|
-      format.json { render :json => @users }
+      format.json{render :json => @users}
     end
   end
 
@@ -28,17 +28,19 @@ class UsersController < ApplicationController
 
   def create
 
-    @user = User.new(user_params)
-    
-    if @user.save
+   @user = User.new(user_params)
+   @user.skills << Skill.find(params[:user][:skill_id].to_i)
+   
+   if @user.save
       session[:user_id] = @user.id
       respond_to do |format|
-        format.json{render :json => @user} 
+        format.json{render :json => @user}
       end
     end
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -50,11 +52,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :address)
   end
-  
+
 end
-
-
-
-
-
-  

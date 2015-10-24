@@ -16,6 +16,25 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+#-----------OmniAuth Facebook Login---------------#
+  def self.sign_in_from_omniauth(auth)
+      find_by(provider: auth['provider'], uid: auth['uid']) || create_user_from_omniauth(auth)
+  end
+
+  def self.create_user_from_omniauth(auth)
+      user = User.create(
+          provider: auth['provider'],
+          uid: auth['uid'],
+          name: auth['info']['name'],
+          first_name: auth['info']['first_name'],
+          last_name: auth['info']['last_name'],
+          email: auth['info']['email'],
+          password: "12345678"
+          )
+  end
+#--Hardcoded for pasword due to bcrypt, have to fix later--#
+#-----------OmniAuth Facebook Login---------------#
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -33,7 +52,7 @@ class User < ActiveRecord::Base
     as_json(
       only: [:id, :first_name, :full_name, :email, :latitude, :longitude],
       include: [:skills],
-      methods: [:full_name]  
+      methods: [:full_name]
     )
   end
 
