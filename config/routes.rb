@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'application#index'
   resource :session, only: [:create, :destroy]
 
+  get 'profile/:id', to: "profiles#show"
+
 #-----------OmniAuth Facebook Login---------------#
   get 'auth/:provider/callback', to: "sessions#fbcreate"
 
