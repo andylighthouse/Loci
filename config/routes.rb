@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :users
   root 'application#index'
-  resource :session, only: [:create, :destroy] 
-
+  resource :session, only: [:create, :destroy]
+  post '/send_message', to: 'chats#send_message'
+  get 'chats/:id', to: 'chats#message'
+  # resources :chats, only: [:show] 
 #-----------OmniAuth Facebook Login---------------#
   get 'auth/:provider/callback', to: "sessions#create"
 
