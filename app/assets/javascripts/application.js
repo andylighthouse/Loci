@@ -20,6 +20,9 @@
 //= require webrtc
 //= require pusher
 //= require signup
+//= require webrtc.js
+//= require_tree .
+
 
 $(function(){ $(document).foundation(); });
 
