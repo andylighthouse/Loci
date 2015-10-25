@@ -6,9 +6,9 @@ $(function() {// Initialise DataChannel.js
   // datachannel.userid = window.userid;
 
   // // Open a connection to Pusher
+  if ( window.location.pathname.indexOf('chats') > -1 ) {
     var pusher = new Pusher("0303fab2c74ca55f8a33"); //hide this later
     var pusherChannel = pusher.subscribe(window.room);
-
     pusherChannel.bind("message", function(message) {
       // config.onmessage(message);
       console.log('received a fuckin message!', message);
@@ -16,6 +16,7 @@ $(function() {// Initialise DataChannel.js
 
       $('#messages').prepend('<li>'+message.message+'</li>');
     });
+  }
   //   // Storage of Pusher connection socket ID
   //   var socketId;
 
