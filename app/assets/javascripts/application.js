@@ -16,8 +16,13 @@
 //= require turbolinks
 //= require underscore
 //= require gmaps/google
+//= require login
+//= require webrtc
+//= require pusher
+//= require signup
 //= require webrtc.js
 //= require_tree .
+
 
 $(function(){ $(document).foundation(); });
 
