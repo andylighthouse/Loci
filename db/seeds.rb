@@ -107,7 +107,7 @@ skill_list = [
   "language",
   "English",
   "French",
-  "Japanses",
+  "Japanese",
   "Cantonese",
   "Mandarin Chinese",
   "Spanish",
