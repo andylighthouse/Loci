@@ -8,20 +8,16 @@
   <div class="demo">
     <div class="demo-connect">
       <input type="text" class="demo-chat-channel-input form-control" placeholder="Channel name"></input>
-      <button class="demo-chat-create btn btn-primary">Create</button>
-      <button class="demo-chat-join btn btn-warning">Join</button>
     </div>
-    <div class="demo-chat inactive">
+    <div class="demo-chat inactive" id="message-box">
       <div class="demo-chat-input">
       <input name="message" id="new-msg" data-id="<%= params[:id] %>" class="demo-chat-message-input form-control" placeholder="Message"></input>
       <button class="demo-chat-send btn btn-primary">Send</button>
     </div>
     <ul id="messages" class="demo-chat-messages list-group">
-      <li class="list-group-item" data-remove="true">No chat messages available</li>
+      
     </ul>
   </div>
-  <footer>
-    <a href="http://pusher.com">Pusher</a> powered peer-to-peer chat
-    </footer>
+  
   </div>
   <!-- / Chat demo -->

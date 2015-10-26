@@ -55,7 +55,8 @@
       <% f.label :password_confimation %>
       <%= f.password_field :password_confimation, :placeholder => "Password Confirmation"%>
 
-      <%= select_tag 'user[skill_id]', options_for_select(@skills.collect{ |s| [s.skill_name, s.id] }) %>
+  
+      <%= select_tag "user[skill_id]", options_from_collection_for_select(@skills, "id", "skill_name") %>
 
       <div><%= f.submit "Submit", :class => "button tiny" %></div>
 

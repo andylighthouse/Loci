@@ -32,23 +32,18 @@
       id: 'geolocation'
     }
   }, 
-
   function(){
     handler.addMarkers(<%=raw @hash.to_json%>);
   });
-
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
       'Error: The Geolocation service failed.' :
       'Error: Your browser doesn\'t support geolocation.');
   }
-
   $('#search-baaaaar form').on('submit', function(e) {
     e.preventDefault();
-
     $('.search-nav').insertAfter('.logo').css('top', '5%');
-
     var opts = {
     lines: 13, // The number of lines to draw
     length: 56, // The length of each line
@@ -71,18 +66,14 @@
     hwaccel: false, // Whether to use hardware acceleration
     position: 'absolute' // Element positioning
     };
-
   var target = document.getElementById('map');
   var spinner = new Spinner(opts).spin(target);
-
   if(navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
-
     var pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude
     }
-
     $.ajax({
       url: '/users',
       data: {
@@ -99,14 +90,11 @@
       $('#map').removeClass('filter');
       // $('#search-baaaaar').css('top','1%');
       $('#search-baaaaar').addClass('search-nav');
-
       // data.forEach(function(point) {
       //   currentMarkers.push(handler.addMarker(point));
       // });
-
       // clear the old markers
       handler.removeMarkers(Gmaps.store.markers);
-
       Gmaps.store.markers = users.map(function(user){
         // console.log(user);
         return handler.addMarker({
@@ -117,10 +105,9 @@
               width:  64,
               height: 64 
             },  
-            "infowindow": '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'
+            "infowindow": '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'+'<br>'+ '<a href="/chats/<%= current_user.id %>_' + user._source.id + '">Chat</a>'
           });
       });
-
       var marker = handler.addMarker({
         lat: position.coords.latitude,
         lng: position.coords.longitude,
@@ -137,13 +124,10 @@
       Gmaps.store.markers.push(marker);
       handler.bounds.extendWith(Gmaps.store.markers);
       handler.fitMapToBounds();
-
       }});
     });
    }
   });
 })();
-
-
 </script>
 
