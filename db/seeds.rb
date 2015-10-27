@@ -134,7 +134,7 @@ skills = skill_list.map do |name|
 end
 
 
-User.populate 100 do |user|
+User.populate 200 do |user|
     user.first_name = Faker::Name.first_name
     user.last_name = Faker::Name.last_name
     user.email = Faker::Internet.email
