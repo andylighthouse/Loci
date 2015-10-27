@@ -2,10 +2,12 @@ class ChatsController < ApplicationController
 
   # before_action :check_if_allowed_in_room
   def message
-    if !(Chat.find_by(room: params[:room]))
+    unless Chat.find_by(room: params[:room])
       Chat.create(room: params[:room])
-    end 
-    @chat_room = Chat.find_by(room: params[:room])
+    end
+
+
+    @chat_room = Chat.includes(:messages, { messages: :messager }).find_by(room: params[:room])
     # @messages = @chat_room.messages
   end
 

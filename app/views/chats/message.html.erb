@@ -8,11 +8,11 @@
   <div class="small-6 large-centered columns">
     <div class="demo">
       <div id="show-chat"> 
-      <% if @chat_room.messages %>
-        <%@chat_room.messages.each do |message| %>
-         <p> <%= message.content %> </p>
-          <%end%>
-        <%end%>
+        <% if @chat_room.messages %>
+          <% @chat_room.messages.each do |message| %>
+            <p><em><%= message.messager.full_name %></em>: <%= message.content %></p>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <form id="input-form">
