@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'twilio-ruby', '~> 4.2.1'
 #omniauth gem for oAuth Facebook-log-in
 gem 'omniauth-facebook'
 
@@ -60,7 +61,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'pry'
+  # gem 'pry'
   # testing geocoder 
   
 

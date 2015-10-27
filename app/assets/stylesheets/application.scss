@@ -94,3 +94,20 @@ body, html {
   vertical-align: middle;
 } 
 
+.header-text {
+  text-transform: uppercase;
+  color: white;
+  z-index: 4;
+  margin-top: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 5em;
+  text-align: center; 
+  text-shadow: rgb(20, 144, 120) 1px 1px;
+  position: relative;
+}
+
+.header-text p {
+  font-family: PTSansBold,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
