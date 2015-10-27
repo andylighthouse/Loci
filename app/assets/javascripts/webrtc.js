@@ -11,10 +11,11 @@ $(function() {// Initialise DataChannel.js
     var pusherChannel = pusher.subscribe(window.room);
     pusherChannel.bind("message", function(message) {
       // config.onmessage(message);
-      console.log('received a fuckin message!', message);
+      console.log('received a message!', message);
 
 
-      $('#messages').prepend('<li>'+message.message+'</li>');
+      $('#show-chat').append('<p><em>'+ message.from + '</em>: ' + message.message+ message.time+'</p>' );
+      // $('#show-chat') // Scroll to the bottom of the #show-chat div to keep new messages visible
     });
   }
   //   // Storage of Pusher connection socket ID
