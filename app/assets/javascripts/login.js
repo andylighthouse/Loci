@@ -19,7 +19,7 @@ $(function() {
   return false;
   });
 
-   function userGreeting(userName){
+  function userGreeting(userName) { 
     $('#user-login-button').text("Welcome "+ userName);
     $('#profile-button').show();
     $('#logout-button').show();
