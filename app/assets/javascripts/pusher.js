@@ -1,7 +1,8 @@
 (function() {
   $(function() {
-    $('.demo-chat-input').on('click', 'button', function() {
-      var msg = $(this).siblings('#new-msg').val();
+    $('#input-form').on('submit', function() {
+      console.log('hello')
+      var msg = $('#new-msg').val();
       // var room_id = $(this).siblings('input').data('id');
 
 
@@ -14,8 +15,9 @@
       $.ajax({
         url: '/send_message',
         method: 'POST',
-        data: {message: msg, room: window.room}
+        data: {message: msg, room: window.room, timestamp : Date.now()}
       });
-    });
+      return false;
+    }); 
   });
 })();

@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def create
 
    @user = User.new(user_params)
+   # byebug
    @user.skills << Skill.find(params[:user][:skill_id].to_i)
    
    if @user.save
