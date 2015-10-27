@@ -14,7 +14,8 @@ $(function() {// Initialise DataChannel.js
       console.log('received a message!', message);
 
 
-      $('#messages').prepend('<p>'+message.message+'</p>');
+      $('#show-chat').append('<p><em>'+ message.from + '</em>: ' + message.message+ message.time+'</p>' );
+      // $('#show-chat') // Scroll to the bottom of the #show-chat div to keep new messages visible
     });
   }
   //   // Storage of Pusher connection socket ID

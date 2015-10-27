@@ -4,20 +4,22 @@
   // alert("Room id is "+window.room);
 </script>
 
-  <!-- Chat demo -->
-  <div class="demo">
-    <div class="demo-connect">
-      <input type="text" class="demo-chat-channel-input form-control" placeholder="Channel name"></input>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="demo">
+      <div id="show-chat"> 
+      <% if @chat_room.messages %>
+        <%@chat_room.messages.each do |message| %>
+         <p> <%= message.content %> </p>
+          <%end%>
+        <%end%>
+      </div>
     </div>
-    <div class="demo-chat inactive" id="message-box">
-      <div class="demo-chat-input">
+    <form id="input-form">
       <input name="message" id="new-msg" data-id="<%= params[:id] %>" class="demo-chat-message-input form-control" placeholder="Message"></input>
-      <button class="demo-chat-send btn btn-primary">Send</button>
-    </div>
-    <ul id="messages" class="demo-chat-messages list-group">
-      
-    </ul>
+      <button class="button tiny">Send</button>
+    </form>
   </div>
-  
-  </div>
-  <!-- / Chat demo -->
+</div>
+
+</body>

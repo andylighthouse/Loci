@@ -1,4 +1,26 @@
-#message-box {
-  width: 50%;
-  padding-top: 2em;
+#show-chat {
+  margin-top: 5em;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  height: 35em;
+  width: 500px;
+  overflow-y: auto;
+  background-color: white;
+  margin-bottom:5px;
+  padding:5px;
+}
+
+#new-msg {
+  margin: 0 auto;
+  width: 85%;
+  background-color: white;
+  border-width:5px;
+  border-color:grey;
+  display:inline-block;
+
+}
+
+body {
+  background-image: url('/images/chat.jpg');
 }

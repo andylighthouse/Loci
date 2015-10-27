@@ -97,6 +97,20 @@
       handler.removeMarkers(Gmaps.store.markers);
       Gmaps.store.markers = users.map(function(user){
         // console.log(user);
+
+        var currentUserId = <%= current_user ? current_user.id : 0 %>;
+        var userId = user._source.id ;
+        var idArray = [currentUserId, userId];
+
+        idArray.sort()
+
+        var infoWindow = '';
+        if (currentUserId === 0) {
+          infoWindow = '<a href="#" id="user-login-button" data-reveal-id="firstModal">Login to chat</a>'
+        } else {
+          infoWindow = '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'+'<br>'+ '<a href="/chats/' + idArray + '">Chat</a>';
+        }
+
         return handler.addMarker({
             lat: user._source.latitude,
             lng: user._source.longitude,
@@ -104,8 +118,8 @@
               url: "../images/yoda.png",
               width:  64,
               height: 64 
-            },  
-            "infowindow": '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'+'<br>'+ '<a href="/chats/<%= current_user.id %>_' + user._source.id + '">Chat</a>'
+            },
+            "infowindow": infoWindow
           });
       });
       var marker = handler.addMarker({
