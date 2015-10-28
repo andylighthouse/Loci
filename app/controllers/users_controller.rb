@@ -56,8 +56,8 @@ class UsersController < ApplicationController
   end
 
   # put your own credentials here
-  account_sid = 'AC86ddbfac833e704c6758e94e3bb38ccc'
-  auth_token = '213c1c053b5f56e137ffd18f179002da'
+  account_sid = ENV['ACCOUNT_SID']
+  auth_token = ENV['AUTH_TOKEN']
 
   # set up a client to talk to the Twilio REST API
   @client = Twilio::REST::Client.new account_sid, auth_token
