@@ -15,9 +15,10 @@ class ChatsController < ApplicationController
     message = params[:message]
     time = params[:timestamp]
     room = params[:room]
+    user_id = params[:user_id]
 
     # user id 
-    pusher = Pusher.trigger(room, 'message', { message: message, from: current_user.full_name, time: time })
+    pusher = Pusher.trigger(room, 'message', { message: message, from: current_user.full_name, user_id: user_id })
     chat_room = Chat.find_by(room: params[:room])
     new_message = Message.create(chat_id: chat_room.id , content: params[:message], messagee_id: params[:room].to_i, messager_id: current_user.id, room: params[:room])
     
