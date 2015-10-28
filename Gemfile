@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'twilio-ruby', '~> 4.2.1'
 #omniauth gem for oAuth Facebook-log-in
 gem 'omniauth-facebook'
