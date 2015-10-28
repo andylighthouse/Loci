@@ -79,29 +79,29 @@ class UsersController < ApplicationController
   #   :record => 'false'
   # })
 
-  # put your own credentials here
-  account_sid = ENV['ACCOUNT_SID']
-  auth_token = ENV['AUTH_TOKEN']
+  # # put your own credentials here
+  # account_sid = ENV['ACCOUNT_SID']
+  # auth_token = ENV['AUTH_TOKEN']
 
-  # set up a client to talk to the Twilio REST API
-  @client = Twilio::REST::Client.new account_sid, auth_token
+  # # set up a client to talk to the Twilio REST API
+  # @client = Twilio::REST::Client.new account_sid, auth_token
 
-  # alternatively, you can preconfigure the client like so
-  Twilio.configure do |config|
-    config.account_sid = account_sid
-    config.auth_token = auth_token
-  end
+  # # alternatively, you can preconfigure the client like so
+  # Twilio.configure do |config|
+  #   config.account_sid = account_sid
+  #   config.auth_token = auth_token
+  # end
 
-  # and then you can create a new client without parameters
-  @client = Twilio::REST::Client.new(account_sid, auth_token)
+  # # and then you can create a new client without parameters
+  # @client = Twilio::REST::Client.new(account_sid, auth_token)
 
-  @client.account.calls.create({ 
-    :from => '+16042276756',   
-    :method => 'GET',  
-    :fallback_method => 'GET',  
-    :status_callback_method => 'GET',    
-    :record => 'false'
-  })
+  # @client.account.calls.create({ 
+  #   :from => '+16042276756',   
+  #   :method => 'GET',  
+  #   :fallback_method => 'GET',  
+  #   :status_callback_method => 'GET',    
+  #   :record => 'false'
+  # })
 
 
 
