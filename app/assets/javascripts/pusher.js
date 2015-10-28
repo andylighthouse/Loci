@@ -3,6 +3,8 @@
     $('#input-form').on('submit', function() {
       console.log('hello')
       var msg = $('#new-msg').val();
+      var currentUserId = $('div[data-current-user]').attr('data-current-user');
+      console.log('currentUserIdnew', currentUserId);
       // var room_id = $(this).siblings('input').data('id');
 
 
@@ -15,9 +17,11 @@
       $.ajax({
         url: '/send_message',
         method: 'POST',
-        data: {message: msg, room: window.room, timestamp : Date.now()}
+        data: {message: msg, room: window.room, user_id: currentUserId}
+      }).done(function(){
+        $('#new-msg').val('');
       });
       return false;
-    }); 
+    });
   });
 })();

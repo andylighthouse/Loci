@@ -7,10 +7,10 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="demo">
-      <div id="show-chat"> 
+      <div id="show-chat" data-current-user="<%= current_user.id %>"> 
         <% if @chat_room.messages %>
           <% @chat_room.messages.each do |message| %>
-            <p><em><%= message.messager.full_name %></em>: <%= message.content %></p>
+            <p class="<%= 'users-message' if current_user.id == message.messager_id %>"><em><%= message.messager.full_name %></em>: <%= message.content %></p>
           <% end %>
         <% end %>
       </div>
