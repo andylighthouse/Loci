@@ -50,10 +50,17 @@ class User < ActiveRecord::Base
     #   skills: skills.map { | s| s.name }
     # }
     as_json(
-      only: [:id, :first_name, :full_name, :email, :latitude, :longitude],
+      only: [:id, :first_name, :full_name, :email, :number, :latitude, :longitude],
       include: [:skills],
       methods: [:full_name]
     )
   end
+
+  # def text
+  #   @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+  #   message = @client.account.messages.create(:body => "Yo",
+  #       :to => "+17789900113",     # Replace with your phone number
+  #       :from => '+16042276756')
+  # end
 
 end

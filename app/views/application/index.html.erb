@@ -109,7 +109,7 @@
         if (currentUserId === 0) {
           infoWindow = '<a href="#" id="user-login-button" data-reveal-id="firstModal">Login to chat</a>'
         } else {
-          infoWindow = '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'+'<br>'+ '<a href="/chats/' + idArray + '">Chat</a>';
+          infoWindow = '<p>'+ user._source.full_name + '<br>' + user._source.email + '</p>'+'<br>'+ '<a href="/chats/' + idArray + '">Chat</a>' + user.number + '<button> Call </button>' + '<button> Text </button>';
         }
 
         return handler.addMarker({
@@ -120,7 +120,7 @@
               width:  64,
               height: 64 
             },  
-            "infowindow": user._source.full_name + '<br>' + user._source.email
+            "infowindow": infoWindow
           });
       });
       var marker = handler.addMarker({
@@ -145,5 +145,6 @@
    }
   });
 })();
+
 </script>
 
