@@ -13,7 +13,6 @@ class ChatsController < ApplicationController
 
   def send_message
     message = params[:message]
-    time = params[:timestamp]
     room = params[:room]
     user_id = params[:user_id]
 
@@ -28,9 +27,4 @@ class ChatsController < ApplicationController
     end
     # binding.pry
   end
-
-  def get_history
-    
-  end
-
 end
