@@ -31,32 +31,25 @@ body, html {
 
 #search-baaaaar {
   position: absolute;
-  border-radius: 2px;
-  border-color: black;
-  border-width: 3px;
   z-index: 4;
-  top: 65%;
-  left: 40%;
-  max-width: 400px;
-  width:50%;
-  display: inline-block;
+  top: 450px;
+  left: 25%;
+  width: 50%;
+  display: block;
 }
 
 #search-baaaaar #skill_name {
-  margin: 0 0 1rem -5rem;
   display: inline-block;
   box-shadow: #D3D3D3 0.5px 5px;
   font-family: PTSansBold,Helvetica,Arial,sans-serif;
-}
-
-#search-baaaaar .search-nav{
-  top: 0;
+  width: 80%; 
 }
 
 #search-baaaaar #submit {
   box-shadow: #006486 1px 5px;
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: PTSansBold,Helvetica,Arial,sans-serif;
+  width: 18%;
 }
 
 #search-baaaaar #submit:focus{
@@ -98,7 +91,7 @@ body, html {
   text-transform: uppercase;
   color: white;
   z-index: 4;
-  margin-top: 3em;
+  margin-top: 3.5em;
   margin-left: auto;
   margin-right: auto;
   font-size: 5em;
@@ -116,6 +109,7 @@ body, html {
 #volume {
   position: absolute;
   z-index: 4;
-  top:5em;
+  top:4em;
   left:2em;
+  box-shadow: #006486 1px 5px;
 }
