@@ -1,6 +1,5 @@
 $(function() {
   $('#login-form').on('submit', function() {
-    console.log('hello');
     $.ajax({
       url: '/session',
       method: 'post',
