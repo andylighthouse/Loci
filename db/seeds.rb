@@ -140,6 +140,7 @@ User.populate 200 do |user|
     user.email = Faker::Internet.email
     user.latitude = rand(49.201168..49.274245)
     user.longitude = rand(-123.251152..-122.905083)
+    user.number = rand(7789900113..7789900120)
 end
 
 User.all.each do |user|

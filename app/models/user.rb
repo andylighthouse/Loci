@@ -1,5 +1,5 @@
 require 'elasticsearch/model'
-
+require 'twilio-ruby'
 class User < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -50,10 +50,20 @@ class User < ActiveRecord::Base
     #   skills: skills.map { | s| s.name }
     # }
     as_json(
-      only: [:id, :first_name, :full_name, :email, :latitude, :longitude],
+      only: [:id, :first_name, :full_name, :email, :number, :latitude, :longitude],
       include: [:skills],
       methods: [:full_name]
     )
+  end
+
+  def text
+    @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+    message = @client.account.messages.create({
+        :body => "testttt",
+        :to => "+17789900113",     
+        :from => "+16042276756",
+        })
+    # puts message
   end
 
 end

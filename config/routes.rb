@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # resources :chats, only: [:show] 
 
-
+  post '/send_text', to: 'users#text'
   get 'profile/:id', to: "profiles#show"
 
 
