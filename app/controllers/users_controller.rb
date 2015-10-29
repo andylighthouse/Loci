@@ -98,12 +98,8 @@ class UsersController < ApplicationController
   #   config.auth_token = auth_token
   # end
 
-  # # and then you can create a new client without parameters
+  # and then you can create a new client without parameters
   # @client = Twilio::REST::Client.new
-
-  # put your own credentials here
-  # account_sid = ENV['ACCOUNT_SID']
-  # auth_token = ENV['AUTH_TOKEN']
 
 end
   

@@ -7,16 +7,18 @@
 <div class="row">
   <div class="small-6 large-centered columns">
     <div class="demo">
-      <div id="show-chat" data-current-user="<%= current_user.id %>"> 
+      <div id="show-chat" data-current-user="<%= current_user.id if current_user%>"> 
         <% if @chat_room.messages %>
           <% @chat_room.messages.each do |message| %>
-            <p class="<%= 'users-message' if current_user.id == message.messager_id %>"><em><%= message.messager.full_name %></em>: <%= message.content %></p>
+            <% if current_user%>
+              <p class="<%= 'users-message' if current_user.id == message.messager_id %>"><em><%= message.messager.full_name %></em>: <%= message.content %></p>
+            <%end%>
           <% end %>
         <% end %>
       </div>
     </div>
     <form id="input-form">
-      <input name="message" id="new-msg" data-id="<%= params[:id] %>" class="demo-chat-message-input form-control" placeholder="Message"></input>
+      <input name="message" id="new-msg" class="demo-chat-message-input form-control" placeholder="Message"></input>
       <button class="button tiny">Send</button>
     </form>
   </div>
