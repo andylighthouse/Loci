@@ -1,5 +1,5 @@
 require 'elasticsearch/model'
-
+require 'twilio-ruby'
 class User < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -56,11 +56,14 @@ class User < ActiveRecord::Base
     )
   end
 
-  # def text
-  #   @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
-  #   message = @client.account.messages.create(:body => "Yo",
-  #       :to => "+17789900113",     # Replace with your phone number
-  #       :from => '+16042276756')
-  # end
+  def text
+    @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+    message = @client.account.messages.create({
+        :body => "testttt",
+        :to => "+17789900113",     
+        :from => "+16042276756",
+        })
+    # puts message
+  end
 
 end
